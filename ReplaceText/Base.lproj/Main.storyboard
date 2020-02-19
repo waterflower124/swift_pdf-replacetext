@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Yr-dS-T5Y">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReplaceText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="f1G-Qu-hgF">
+                                <rect key="frame" x="41.5" y="188" width="331" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZY-jn-wJU">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="30"/>
+                                        <state key="normal" title="Choose PDF file.."/>
+                                        <connections>
+                                            <action selector="choosePDFFIleDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rTt-eo-JBT"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to replace" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-pM-JbW">
+                                        <rect key="frame" x="0.0" y="70" width="331" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="uu9-4h-R5X"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to replace with" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WTm-yJ-J9W">
+                                        <rect key="frame" x="0.0" y="140" width="331" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5Yl-Od-vFj"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6d-Ba-BSc">
+                                        <rect key="frame" x="0.0" y="210" width="331" height="30"/>
+                                        <state key="normal" title="Replace all occurrences"/>
+                                        <connections>
+                                            <action selector="replaceAllOccrrencesDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HJt-lq-3ui"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f1G-Qu-hgF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="A4L-83-as9"/>
+                            <constraint firstItem="f1G-Qu-hgF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="JfT-ve-1SR"/>
+                            <constraint firstItem="f1G-Qu-hgF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ywf-LI-lZe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Uv-XP-hIp"/>
+                    <connections>
+                        <outlet property="choosePDFFileButton" destination="rZY-jn-wJU" id="GMb-hs-xnO"/>
+                        <outlet property="replaceAllOccerrencesButton" destination="V6d-Ba-BSc" id="XYl-V1-Q4U"/>
+                        <outlet property="textToReplaceTextField" destination="Q8c-pM-JbW" id="j2X-St-stL"/>
+                        <outlet property="textToReplaceWithTextField" destination="WTm-yJ-J9W" id="OBa-LF-32H"/>
+                        <segue destination="f4n-fA-eOC" kind="show" identifier="showPDFFile" id="Qq8-b5-8p3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="-629"/>
+        </scene>
+        <!--Viewer View Controller-->
+        <scene sceneID="Rr3-fo-YiA">
+            <objects>
+                <viewController id="f4n-fA-eOC" customClass="PDFViewerViewController" customModule="ReplaceText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iKj-6Y-yLh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqf-nX-hHz" customClass="PDFView">
+                                <rect key="frame" x="10" y="88" width="394" height="764"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C0X-Ul-0XV" firstAttribute="trailing" secondItem="gqf-nX-hHz" secondAttribute="trailing" constant="10" id="JtC-zU-zoz"/>
+                            <constraint firstItem="C0X-Ul-0XV" firstAttribute="bottom" secondItem="gqf-nX-hHz" secondAttribute="bottom" constant="10" id="KFl-SB-uXl"/>
+                            <constraint firstItem="gqf-nX-hHz" firstAttribute="top" secondItem="C0X-Ul-0XV" secondAttribute="top" id="imL-r1-xDG"/>
+                            <constraint firstItem="gqf-nX-hHz" firstAttribute="leading" secondItem="C0X-Ul-0XV" secondAttribute="leading" constant="10" id="x1o-EA-sLG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C0X-Ul-0XV"/>
+                    </view>
+                    <connections>
+                        <outlet property="pdfView" destination="gqf-nX-hHz" id="ArD-xa-4ec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFN-Mj-TDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="-629"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="N5f-ck-hmQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Yr-dS-T5Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D23-Wd-qvM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7hR-oL-fJU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6y-0E-iwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="515.94202898550725" y="-629.46428571428567"/>
+        </scene>
+    </scenes>
+</document>
